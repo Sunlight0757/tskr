@@ -31,11 +31,9 @@ const Navbar = () => {
   return (
     <div className="flex justify-between px-[30px] h-20 border-b border-[#e9e9e9] text-[#222] text-[15px] font-medium leading-7">
       <div className="flex gap-8 my-5">
-        <img
-          alt="logo"
-          src="/assets/images/logo/logo.svg"
-          className="border-r border-[#e9e9e9] pr-8"
-        />
+        <NavLink to="/" className="border-r border-[#e9e9e9] pr-8 min-w-fit">
+          <img alt="logo" src="/assets/images/logo/logo.svg" />
+        </NavLink>
         <div className="group flex items-center cursor-pointer">
           <svg
             width="16"
@@ -76,7 +74,7 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="group cursor-pointer"
           >
-            <g clip-path="url(#clip0_720_21026)">
+            <g clipPath="url(#clip0_720_21026)">
               <path
                 d="M7.04606 0C3.16097 0 0 3.16097 0 7.04606C0 10.9314 3.16097 14.0921 7.04606 14.0921C10.9314 14.0921 14.0921 10.9314 14.0921 7.04606C14.0921 3.16097 10.9314 0 7.04606 0ZM7.04606 12.7913C3.87816 12.7913 1.30081 10.214 1.30081 7.04609C1.30081 3.87819 3.87816 1.30081 7.04606 1.30081C10.214 1.30081 12.7913 3.87816 12.7913 7.04606C12.7913 10.214 10.214 12.7913 7.04606 12.7913Z"
                 fill="#222222"
