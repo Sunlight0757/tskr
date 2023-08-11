@@ -2,13 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/users");
 
-const app = express();
+const server_app = express();
+const client_app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+server_app.use(bodyParser.urlencoded({ extended: false }));
+server_app.use(bodyParser.json());
 
 const db = require("./config/keys").mongoURI;
 
@@ -17,9 +19,16 @@ mongoose
   .then(() => console.log("Connected Successfully"))
   .catch((err) => console.log(err));
 
-app.use(passport.initialize());
+server_app.use(passport.initialize());
 require("./config/passport")(passport);
 
-app.use("/users", users);
+server_app.use("/users", users);
 
-app.listen(5000, () => console.log(`Server started on 5000`));
+server_app.listen(5000, () => console.log(`Server started on 5000`));
+
+client_app.use(express.static(path.join(__dirname, "build")));
+client_app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+client_app.listen(80);
