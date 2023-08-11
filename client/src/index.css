@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: DM Sans;
+  src: url('../public/assets/fonts/DMSans/DMSans-VariableFont_opsz\,wght.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: Jost;
+  src: url('../public/assets/fonts/Jost/Jost-VariableFont_wght.ttf');
+}
+
+* {
+  font-family: DM Sans;
+}
+
+body {
+  margin: 0;
 }
