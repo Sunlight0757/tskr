@@ -9,7 +9,6 @@ module.exports = (req, res, next) => {
   data.lastname = !isEmpty(data.lastname) ? data.lastname : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-  data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
   if (validator.isEmpty(data.firstname)) {
     errors.firstname = "First Name field is required";
@@ -77,14 +76,6 @@ module.exports = (req, res, next) => {
 
   if (validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
-  }
-
-  if (!validator.equals(data.password, data.password2)) {
-    errors.password2 = "Passwords must match";
-  }
-
-  if (validator.isEmpty(data.password2)) {
-    errors.password2 = "Confirm Password field is required";
   }
 
   if (!isEmpty(errors)) res.status(400).json(errors);

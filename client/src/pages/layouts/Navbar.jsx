@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Button from "../../components/Button";
 
 const Navbar = () => {
   const items = [
@@ -101,11 +102,8 @@ const Navbar = () => {
           >
             Sign In
           </NavLink>
-          <NavLink
-            to="/signup"
-            className="bg-[#5BBB7B] text-[#fff] font-bold px-6 py-1 rounded"
-          >
-            Sign Up
+          <NavLink to="/signup">
+            <Button>Sign Up</Button>
           </NavLink>
         </div>
       </div>

@@ -4,7 +4,7 @@ module.exports = {
   signup: (req, res) => {
     User.signup(req.body)
       .then(() => {
-        res.json({ status: "Success", msg: "User create successfully" });
+        res.json({ status: "Success", msg: "User create successfully." });
       })
       .catch((err) => {
         res.status(err.type).json({ status: "Error", msg: err.msg });

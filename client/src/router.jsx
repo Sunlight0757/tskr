@@ -1,18 +1,18 @@
 import { Suspense, lazy } from "react";
 
-import SuspenseLoader from "./components/SuspenseLoader";
+import Spin from "./components/Spin";
 
 const Loader = (Component) => (props) => {
   return (
-    <Suspense fallback={<SuspenseLoader />}>
+    <Suspense fallback={<Spin />}>
       <Component {...props} />
     </Suspense>
   );
 };
 
 // Auth
-const Signin = Loader(lazy(() => import("./containers/Signin")));
-const Signup = Loader(lazy(() => import("./containers/Signup")));
+const Signin = Loader(lazy(() => import("./containers/Auth/Signin")));
+const Signup = Loader(lazy(() => import("./containers/Auth/Signup")));
 
 const routes = [
   {
