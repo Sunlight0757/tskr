@@ -15,7 +15,7 @@ const Signin = () => {
   const user = useSelector(selectAuth);
   const navigate = useNavigate();
   useEffect(() => {
-    if (user.isAuthenticated) navigate("/");
+    if (user.isAuthenticated) navigate("/dashboard");
   }, [user.isAuthenticated, navigate]);
 
   const emailRef = useRef();
@@ -89,16 +89,16 @@ const Signin = () => {
           localStorage.removeItem("tskr-email");
           localStorage.removeItem("tskr-password");
         }
-        navigate("/");
+        navigate("/dashboard");
       })
-      .catch((err) => setErrors({ ...errors, ...err.response.data }));
+      .catch((err) => ToastHelper(err.response.data));
   };
 
   return (
     <div className="bg-[#FFEDE8] text-[#222] text-[15px]">
       <div className="flex flex-col items-center max-w-[650px] m-auto pt-[120px] pb-72">
         <div className="text-[32px] font-bold leading-10 mb-16">Log In</div>
-        <div className="bg-white w-full rounded-lg border border-[#E9E9E9] shadow-[0px 6px 15px 0px #404F680D] p-[50px]">
+        <div className="flex flex-col items-center bg-white w-full rounded-lg border border-[#E9E9E9] shadow-[0px 6px 15px 0px #404F680D] p-[50px]">
           <div className="flex flex-col items-center gap-5 font-medium mb-9">
             <span className="text-xl leading-[26px]">Welcome back!</span>
             <span>
@@ -111,7 +111,7 @@ const Signin = () => {
               </NavLink>
             </span>
           </div>
-          <div className="flex flex-col gap-6 font-medium mb-8">
+          <div className="flex flex-col gap-6 font-medium mb-8 w-full">
             <Input
               type="email"
               placeholder="Enter email address"
@@ -151,8 +151,10 @@ const Signin = () => {
             </div>
           </div>
           <Button
-            onClick={handleSubmit}
+            className="w-full"
+            type="primary"
             size="large"
+            onClick={handleSubmit}
             disabled={errors.email !== "" || errors.password !== ""}
           >
             Log In

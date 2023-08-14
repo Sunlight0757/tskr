@@ -15,7 +15,7 @@ const Signup = () => {
   const user = useSelector(selectAuth);
   const navigate = useNavigate();
   useEffect(() => {
-    if (user.isAuthenticated) navigate("/");
+    if (user.isAuthenticated) navigate("/dashboard");
   }, [user.isAuthenticated, navigate]);
 
   const lastnameRef = useRef();
@@ -248,6 +248,8 @@ const Signup = () => {
             </div>
           </div>
           <Button
+            className="w-full"
+            type="primary"
             size="large"
             onClick={handleSubmit}
             disabled={

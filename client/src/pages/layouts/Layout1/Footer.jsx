@@ -250,28 +250,8 @@ const Footer = () => {
           </div>
           <div className="flex justify-between items-center py-5 text-sm text-white/70 border-t border-white/[0.07]">
             <span className="leading-7">
-              © Freeio. 2022 CreativeLayers. All rights reserved.
+              © Tskr.com - 2023. All rights reserved.
             </span>
-            <div className="flex gap-5">
-              <select
-                className="bg-white/5 px-5 py-3 rounded"
-                value="0"
-                onChange={() => console.log("first")}
-              >
-                <option className="font-['Jost']" value="0">
-                  US$ USD
-                </option>
-              </select>
-              <select
-                className="bg-white/5 px-5 py-3 rounded"
-                value="0"
-                onChange={() => console.log("first")}
-              >
-                <option className="font-['Jost']" value="0">
-                  English
-                </option>
-              </select>
-            </div>
           </div>
         </div>
       </div>
