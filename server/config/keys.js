@@ -4,6 +4,6 @@
 // };
 module.exports = {
   mongoURI:
-    "mongodb+srv://Sunlight0757:M4ZXmiy3AWTDAMev@cluster0.axv2rzz.mongodb.net/",
+    "mongodb+srv://Sunlight0757:M4ZXmiy3AWTDAMev@cluster0.axv2rzz.mongodb.net/tskr",
   secretOrKey: "secret",
 };
