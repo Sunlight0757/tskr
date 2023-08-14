@@ -12,7 +12,7 @@ const server_app = express();
 
 const corsOpts = {
   origin: "*",
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
 };
 
