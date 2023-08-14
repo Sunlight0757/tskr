@@ -3,11 +3,20 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
+const cors = require("cors");
 
 const users = require("./routes/users");
 
 const server_app = express();
 // const client_app = express();
+
+const corsOpts = {
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+};
+
+server_app.use(cors(corsOpts));
 
 server_app.use(bodyParser.urlencoded({ extended: false }));
 server_app.use(bodyParser.json());
