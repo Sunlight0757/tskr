@@ -163,6 +163,7 @@ const Signup = () => {
         setEmail("");
         setPassword("");
         setErrors({});
+        navigate("/signin");
       })
       .catch((err) => setErrors({ ...errors, ...err.response.data }));
   };
